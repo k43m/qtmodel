@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
         for (auto val : vals) {
 
-            AlertItem *myItem = new AlertItem(QString::number(val),"1/1/2022","Secteur Nord",false);
+            AlertItem *myItem = new AlertItem(QString::number(val),"Secteur Nord",false);
             myModel->appendRow(myItem);
         }
 

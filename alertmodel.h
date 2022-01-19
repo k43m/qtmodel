@@ -18,7 +18,7 @@ class AlertItem: public ListItem {
 public:
     AlertItem(): ListItem() {}
     ~AlertItem() {}
-    AlertItem(QString alertId, QString date, QString sectorName, bool acknowledged, QObject *parent=nullptr) :
+    AlertItem(QString alertId, QString sectorName, bool acknowledged, QObject *parent=nullptr) :
                                                                                                                  ListItem(parent),
                                                                                                                  m_alertId(alertId),
                                                                                                                  m_sectorName(sectorName),
