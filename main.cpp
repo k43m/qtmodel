@@ -17,11 +17,14 @@ int main(int argc, char *argv[])
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
     AlertListModel *myModel = new AlertListModel();
-    AlertItem *myItem = new AlertItem("0","1/1/2021","Secteur Nord",false);
-    myModel->appendRow(myItem);
 
-    AlertItem *myItem2 = new AlertItem("1","2/1/2021","Secteur Sud",true);
-    myModel->appendRow(myItem2);
+    int vals[] {1, 2, 3, 4, 5};
+
+        for (auto val : vals) {
+
+            AlertItem *myItem = new AlertItem(QString::number(val),"1/1/2022","Secteur Nord",false);
+            myModel->appendRow(myItem);
+        }
 
     QQmlContext *ctxt = engine.rootContext();
     ctxt->setContextProperty("alertModel", QVariant::fromValue(myModel));

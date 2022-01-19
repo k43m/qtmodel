@@ -8,7 +8,6 @@ enum Roles {
     AlertIdRole,
     SectorNameRole,
     TypeRole,
-    DetectionTimeRole,
     IsAcknowledgedRole,
     IsVisibleRole
 };
@@ -23,7 +22,6 @@ public:
                                                                                                                  ListItem(parent),
                                                                                                                  m_alertId(alertId),
                                                                                                                  m_sectorName(sectorName),
-                                                                                                                 m_detectionTime(date),
                                                                                                                  m_isAcknowledged(acknowledged),
                                                                                                                  m_targetCount(0)
     {
@@ -35,7 +33,6 @@ public:
     int getType(){return m_type;}
     QString sectorName() { return m_sectorName;}
     int type() { return m_type;}
-    QString detectionTime() {return m_detectionTime;}
     bool IsAcknowledged() { return m_isAcknowledged;}
 
     inline QString id() const { return m_alertId; }
@@ -54,8 +51,6 @@ public:
             return m_sectorName;
         case TypeRole:
             return m_type;
-        case DetectionTimeRole:
-            return m_detectionTime;
         case IsAcknowledgedRole:
             return m_isAcknowledged;
         default:
@@ -68,7 +63,7 @@ private:
     QString                   m_alertId;
     QString                   m_sectorName;
     int                       m_type;
-    QString                   m_detectionTime;
+    //TODO QDate m_date;
     bool                      m_isAcknowledged;
     int                       m_targetCount;
 };
@@ -90,7 +85,6 @@ public:
         roles[AlertIdRole]          = "alertId";
         roles[SectorNameRole]       = "sectorName";
         roles[TypeRole]             = "type";
-        roles[DetectionTimeRole]    = "detectionTime";
         roles[IsAcknowledgedRole]   = "isAcknowledged";
         roles[IsVisibleRole]        = "isVisible";
         return roles;

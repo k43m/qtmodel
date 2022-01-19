@@ -1,4 +1,5 @@
 import QtQuick 2.14
+import QtQuick.Controls 2.5
 import QtQuick.Window 2.14
 
 Window {
@@ -14,8 +15,8 @@ Window {
         header:Text{text:"ALERTS"}
         delegate:
             Rectangle{
-            width: 100
-            height: 20
+            width: parent.width
+            height: 40
             border.color: "black"
             border.width: 2
             radius: 8
@@ -26,17 +27,36 @@ Window {
                 Text {
                     id: name
                     height: parent.height
-                    width: parent.width/4
+                    width: parent.width/8
                     text: model.alertId
+                    verticalAlignment: Text.AlignVCenter
                 }
                 Text {
                     id: date
                     height: parent.height
                     width: parent.width/4
-                    text: model.detectionTime
+                    text: "TODO DATE"
+                    verticalAlignment: Text.AlignVCenter
+                }
+                Text {
+                    id: sector
+                    height: parent.height
+                    width: parent.width/3
+                    verticalAlignment: Text.AlignVCenter
+                    text: model.sectorName
+                }
+                Button{
+                    text:"TODO Remove"
+                    height: parent.height
+                    width: parent.width/4
+                    onClicked: {
+                        //TODO
+                    }
                 }
             }
+
         }
     }
+
 
 }
